@@ -1,4 +1,3 @@
-import TextField from '@material-ui/core/TextField';
 import React, { useEffect, useRef, useState } from 'react';
 import io from 'socket.io-client';
 
@@ -43,21 +42,23 @@ const App = () => {
       <form onSubmit={onMessageSubmit}>
         <h1>Messenger</h1>
         <div className='name-field'>
-          <TextField 
+          <input 
             name='name' 
             onChange={(evt) => onTextChange(evt)} 
             value={state.name}
             label='name'
+            placeholder='name'
           />
         </div>
         <div>
-          <TextField
+          <input
             name='message'
             onChange={(evt) => onTextChange(evt)}
             value={state.message}
             id='outlined-multiline-static'
             variant='outlined'
             label='message'
+            placeholder='message'
           />
         </div>
         <button>send message</button>
