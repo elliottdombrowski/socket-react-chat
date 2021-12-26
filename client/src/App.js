@@ -37,4 +37,35 @@ const App = () => {
       </div>
     ))
   };
+
+  return (
+    <div className='card'>
+      <form onSubmit={onMessageSubmit}>
+        <h1>Messenger</h1>
+        <div className='name-field'>
+          <TextField 
+            name='name' 
+            onChange={(evt) => onTextChange(evt)} 
+            value={state.name}
+            label='name'
+          />
+        </div>
+        <div>
+          <TextField
+            name='message'
+            onChange={(evt) => onTextChange(evt)}
+            value={state.message}
+            id='outlined-multiline-static'
+            variant='outlined'
+            label='message'
+          />
+        </div>
+        <button>send message</button>
+      </form>
+      <div className='render-chat'>
+        <h1>chat log</h1>
+        {renderChat()}
+      </div>
+    </div>
+  )
 };
